@@ -1,0 +1,257 @@
+oo	Description	Alt	Bash Command	Type
+1	0		xdotool key 0	Numeric
+2	1		xdotool key 1	Numeric
+3	2		xdotool key 2	Numeric
+4	3		xdotool key 3	Numeric
+5	4		xdotool key 4	Numeric
+6	5		xdotool key 5	Numeric
+7	6		xdotool key 6	Numeric
+8	7		xdotool key 7	Numeric
+9	8		xdotool key 8	Numeric
+10	9		xdotool key 9	Numeric
+11	Alt 0		xdotool key alt+0	Function
+12	Alt 1		xdotool key alt+1	Function
+13	Alt 2		xdotool key alt+2	Function
+14	Alt 3		xdotool key alt+3	Function
+15	Alt 4		xdotool key alt+4	Function
+16	Alt 5		xdotool key alt+5	Function
+17	Alt 6		xdotool key alt+6	Function
+18	Alt 7		xdotool key alt+7	Function
+19	Alt 8		xdotool key alt+8	Function
+20	Alt 9		xdotool key alt+9	Function
+21	Alt A		xdotool key alt+a	Function
+22	Alt B		xdotool key alt+b	Function
+23	Alt C		xdotool key alt+c	Function
+24	Alt D		xdotool key alt+d	Function
+25	Alt E		xdotool key alt+e	Function
+26	Alt F		xdotool key alt+f	Function
+27	Alt F13		xdotool key alt+F13	Function
+28	Alt F14		xdotool key alt+F14	Function
+29	Alt F15		xdotool key alt+F15	Function
+30	Alt F16		xdotool key alt+F16	Function
+31	Alt G		xdotool key alt+g	Function
+32	Alt H		xdotool key alt+h	Function
+33	Alt I		xdotool key alt+i	Function
+34	Alt J		xdotool key alt+j	Function
+35	Alt K		xdotool key alt+k	Function
+36	Alt L		xdotool key alt+l	Function
+37	Alt M		xdotool key alt+m	Function
+38	Alt N		xdotool key alt+n	Function
+39	Alt O		xdotool key alt+o	Function
+40	Alt P		xdotool key alt+p	Function
+41	Alt Q		xdotool key alt+q	Function
+42	Alt R		xdotool key alt+r	Function
+43	Alt S		xdotool key alt+s	Function
+44	Alt Tab		xdotool key alt+Tab	Function
+45	Ampersand	&	xdotool key ampersand	Symbol
+46	Apostrophe	'	xdotool key apostrophe	Punctuation
+47	Asterisk	*	xdotool key asterisk	Numeric
+48	At	@	xdotool key at	Symbol
+49	Backslash	\	xdotool key backslash	Symbol
+50	Backspace	Bksp	xdotool key BackSpace	Controls
+51	Bar	|	xdotool key bar	Symbol
+52	Big A		xdotool key A	Letters
+53	Big B		xdotool key B	Letters
+54	Big C		xdotool key C	Letters
+55	Big D		xdotool key D	Letters
+56	Big E		xdotool key E	Letters
+57	Big F		xdotool key F	Letters
+58	Big G		xdotool key G	Letters
+59	Big H		xdotool key H	Letters
+60	Big I		xdotool key I	Letters
+61	Big J		xdotool key J	Letters
+62	Big K		xdotool key K	Letters
+63	Big L		xdotool key L	Letters
+64	Big M		xdotool key M	Letters
+65	Big N		xdotool key N	Letters
+66	Big O		xdotool key O	Letters
+67	Big P		xdotool key P	Letters
+68	Big Q		xdotool key Q	Letters
+69	Big R		xdotool key R	Letters
+70	Big S		xdotool key S	Letters
+71	Big T		xdotool key T	Letters
+72	Big U		xdotool key U	Letters
+73	Big V		xdotool key --clearmodifiers V	Letters
+74	Big W		xdotool key --clearmodifiers W	Letters
+75	Big X		xdotool key --clearmodifiers X	Letters
+76	Big Y		xdotool key --clearmodifiers Y	Letters
+77	Big Z		xdotool key --clearmodifiers Z	Letters
+78	Caret	^	xdotool key asciicircum	Numeric
+79	Click		xdotool click 1	Mouse
+80	Colon	:	xdotool key colon	Punctuation
+81	Comma	,	xdotool key comma	Punctuation
+82	Control Alt 0		xdotool key ctrl+alt+0	Function
+83	Control Alt 1		xdotool key ctrl+alt+1	Function
+84	Control Alt 2		xdotool key ctrl+alt+2	Function
+85	Control Alt 3		xdotool key ctrl+alt+3	Function
+86	Control Alt 4		xdotool key ctrl+alt+4	Function
+87	Control Alt 5		xdotool key ctrl+alt+5	Function
+88	Control Alt 6		xdotool key ctrl+alt+6	Function
+89	Control Alt 7		xdotool key ctrl+alt+7	Function
+90	Control Alt 8		xdotool key ctrl+alt+8	Function
+91	Control Alt 9		xdotool key ctrl+alt+9	Function
+92	Control Alt A		xdotool key ctrl+alt+a	Function
+93	Control Alt B		xdotool key ctrl+alt+b	Function
+94	Control Alt C		xdotool key ctrl+alt+c	Function
+95	Control Alt D		xdotool key ctrl+alt+d	Function
+96	Control Alt E		xdotool key ctrl+alt+e	Function
+97	Control Alt F		xdotool key ctrl+alt+f	Function
+98	Control Alt F13		xdotool key ctrl+alt+F13	Function
+99	Control Alt F14		xdotool key ctrl+alt+F14	Function
+100	Control Alt F15		xdotool key ctrl+alt+F15	Function
+101	Control Alt F16		xdotool key ctrl+alt+F16	Function
+102	Control Alt G		xdotool key ctrl+alt+g	Function
+103	Control Alt H		xdotool key ctrl+alt+h	Function
+104	Control Alt I		xdotool key ctrl+alt+i	Function
+105	Control Alt J		xdotool key ctrl+alt+j	Function
+106	Control Alt K		xdotool key ctrl+alt+k	Function
+107	Control Alt L		xdotool key ctrl+alt+l	Function
+108	Control Alt M		xdotool key ctrl+alt+m	Function
+109	Control Alt N		xdotool key ctrl+alt+n	Function
+110	Control Alt O		xdotool key ctrl+alt+o	Function
+111	Control Alt P		xdotool key ctrl+alt+p	Function
+112	Control Alt Q		xdotool key ctrl+alt+q	Function
+113	Control Alt R		xdotool key ctrl+alt+r	Function
+114	Control Alt S		xdotool key ctrl+alt+s	Function
+115	Control F13		xdotool key ctrl+F13	Function
+116	Control F14		xdotool key ctrl+F14	Function
+117	Control F15		xdotool key ctrl+F15	Function
+118	Control F16		xdotool key ctrl+F16	Function
+119	Copy	Copy	xdotool key --clearmodifiers ctrl+c	Controls
+120	Cut	Cut	xdotool key --clearmodifiers ctrl+x	Controls
+121	Dash	-	xdotool key minus	Numeric
+122	Delete	Del	xdotool key KP_Delete	Controls
+123	Dollar Sign	$	xdotool key dollar	Symbol
+124	Double Click		xdotool click --repeat 2 --delay 10 1	Mouse
+125	Down	Down	xdotool key Down	Navigation
+126	End	End	xdotool key End	Navigation
+127	Enter	Ent	xdotool key KP_Enter	Spacing
+128	Equal	=	xdotool key equal	Numeric
+129	Escape	Esc	xdotool key Escape	Controls
+130	Exclamation	!	xdotool key exclam	Punctuation
+131	F1		xdotool key F1	Function
+132	F10		xdotool key F10	Function
+133	F11	Fullscreen	xdotool key F11	Function
+134	F12		xdotool key F12	Function
+135	F13		xdotool key F13	Function
+136	F14		xdotool key F14	Function
+137	F15		xdotool key F15	Function
+138	F16		xdotool key F16	Function
+139	F2	Help	xdotool key F2	Function
+140	F3		xdotool key F3	Function
+141	F4		xdotool key F4	Function
+142	F5	Refresh	xdotool key F5	Function
+143	F6		xdotool key F6	Function
+144	F7		xdotool key F7	Function
+145	F8		xdotool key F8	Function
+146	F9		xdotool key F9	Function
+147	Greater	>	xdotool key greater	Numeric
+148	Hash	#	xdotool key numbersign	Symbol
+149	Home	Home	xdotool key Home	Navigation
+150	Left	Left	xdotool key Left	Navigation
+151	Left Bracket	[	xdotool key bracketleft	Symbol
+152	Left Paren	(	xdotool key parenleft	Punctuation
+153	Less	<	xdotool key less	Numeric
+154	Little a		xdotool key a	Letters
+155	Little b		xdotool key b	Letters
+156	Little c		xdotool key c	Letters
+157	Little d		xdotool key d	Letters
+158	Little e		xdotool key e	Letters
+159	Little f		xdotool key f	Letters
+160	Little g		xdotool key g	Letters
+161	Little h		xdotool key h	Letters
+162	Little i		xdotool key i	Letters
+163	Little j		xdotool key j	Letters
+164	Little k		xdotool key k	Letters
+165	Little l		xdotool key l	Letters
+166	Little m		xdotool key m	Letters
+167	Little n		xdotool key n	Letters
+168	Little o		xdotool key o	Letters
+169	Little p		xdotool key p	Letters
+170	Little q		xdotool key q	Letters
+171	Little r		xdotool key r	Letters
+172	Little s		xdotool key s	Letters
+173	Little t		xdotool key t	Letters
+174	Little u		xdotool key u	Letters
+175	Little v		xdotool key --clearmodifiers v	Letters
+176	Little w		xdotool key --clearmodifiers w	Letters
+177	Little x		xdotool key --clearmodifiers x	Letters
+178	Little y		xdotool key --clearmodifiers y	Letters
+179	Little z		xdotool key --clearmodifiers z	Letters
+180	Middle Click		xdotool click 2	Mouse
+181	Middle Double Click		xdotool click --repeat 2 --delay 10 2	Mouse
+182	Middle Quad Click		xdotool click --repeat 4 --delay 5 2	Mouse
+183	MIddle Triple Click		xdotool click --repeat 3 --delay 5 2	Mouse
+184	Minus	-	xdotool key minus	Numeric
+185	Next		xdotool key Next	Navigation
+186	Page Down	Pg Dn	xdotool key Page Down	Navigation
+187	Page Up	Pg Up	xdotool key Page_Up	Navigation
+188	Paste	Paste	xdotool key --clearmodifiers ctrl+v	Controls
+189	Percent	%	xdotool key percent	Numeric
+190	Period	.	xdotool key period	Punctuation
+191	Plus	+	xdotool key plus	Numeric
+192	Prior		xdotool key Prior	Navigation
+193	Quad Click		xdotool click --repeat 4 --delay 5 1	Mouse
+194	Question	?	xdotool key question	Punctuation
+195	Quote	"	xdotool key quotedbl	Punctuation
+196	Right	Right	xdotool key Right	Navigation
+197	Right Bracket	]	xdotool key bracketright	Symbol
+198	Right Click		xdotool click 3	Mouse
+199	Right Double Click		xdotool click --repeat 2 --delay 10 3	Mouse
+200	Right Paren	)	xdotool key parenright	Punctuation
+201	Right Quad Click		xdotool click --repeat 4 --delay 5 3	Mouse
+202	Right Triple Click		xdotool click --repeat 3 --delay 5 3	Mouse
+203	Semicolon	;	xdotool key semicolon	Punctuation
+204	Shift Alt 0		xdotool key shift+alt+0	Function
+205	Shift Alt 1		xdotool key shift+alt+1	Function
+206	Shift Alt 2		xdotool key shift+alt+2	Function
+207	Shift Alt 3		xdotool key shift+alt+3	Function
+208	Shift Alt 4		xdotool key shift+alt+4	Function
+209	Shift Alt 5		xdotool key shift+alt+5	Function
+210	Shift Alt 6		xdotool key shift+alt+6	Function
+211	Shift Alt 7		xdotool key shift+alt+7	Function
+212	Shift Alt 8		xdotool key shift+alt+8	Function
+213	Shift Alt 9		xdotool key shift+alt+9	Function
+214	Shift Alt A		xdotool key shift+alt+a	Function
+215	Shift Alt B		xdotool key shift+alt+b	Function
+216	Shift Alt C		xdotool key shift+alt+c	Function
+217	Shift Alt D		xdotool key shift+alt+d	Function
+218	Shift Alt E		xdotool key shift+alt+e	Function
+219	Shift Alt F		xdotool key shift+alt+f	Function
+220	Shift Alt F13		xdotool key shift+alt+F13	Function
+221	Shift Alt F14		xdotool key shift+alt+F14	Function
+222	Shift Alt F15		xdotool key shift+alt+F15	Function
+223	Shift Alt F16		xdotool key shift+alt+F16	Function
+224	Shift Alt G		xdotool key shift+alt+g	Function
+225	Shift Alt H		xdotool key shift+alt+h	Function
+226	Shift Alt I		xdotool key shift+alt+i	Function
+227	Shift Alt J		xdotool key shift+alt+j	Function
+228	Shift Alt K		xdotool key shift+alt+k	Function
+229	Shift Alt L		xdotool key shift+alt+l	Function
+230	Shift Alt M		xdotool key shift+alt+m	Function
+231	Shift Alt N		xdotool key shift+alt+n	Function
+232	Shift Alt O		xdotool key shift+alt+o	Function
+233	Shift Alt P		xdotool key shift+alt+p	Function
+234	Shift Alt Q		xdotool key shift+alt+q	Function
+235	Shift Alt R		xdotool key shift+alt+r	Function
+236	Shift Alt S		xdotool key shift+alt+s	Function
+237	Shift Control Alt F13		xdotool key shift+ctrl+alt+F13	Function
+238	Shift Control Alt F14		xdotool key shift+ctrl+alt+F14	Function
+239	Shift Control Alt F15		xdotool key shift+ctrl+alt+F15	Function
+240	Shift Control Alt F16		xdotool key shift+ctrl+alt+F16	Function
+241	Shift Control F13		xdotool key shift+ctrl+F13	Function
+242	Shift Control F14		xdotool key shift+ctrl+F14	Function
+243	Shift Control F15		xdotool key shift+ctrl+F15	Function
+244	Shift Control F16		xdotool key shift+ctrl+F16	Function
+245	Shift F13		xdotool key shift+F13	Function
+246	Shift F14		xdotool key shift+F14	Function
+247	Shift F15		xdotool key shift+F15	Function
+248	Shift F16		xdotool key shift+F16	Function
+249	Slash	/	xdotool key slash	Numeric
+250	Space	Spc	xdotool key space	Spacing
+251	Sys Menu	Sys	xdotool key -clearmodifiers Super_L	Navigation
+252	Tab	Tab	xdotool key Tab	Spacing
+253	Tab Back		xdotool key shift+Tab	Navigation
+254	Triple Click		xdotool click --repeat 3 --delay 5 1	Mouse
+255	Undo	Undo	xdotool key --clearmodifiers ctrl+z	Controls
+256	Up	Up	xdotool key Up	Navigation

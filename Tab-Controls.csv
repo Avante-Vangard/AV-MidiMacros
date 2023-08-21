@@ -1,0 +1,11 @@
+Button	Input Code	Min	Max	Type	Positions					
+Pitch Bd	Pitch bend              0, value	-8192	8191	2 way momentary	3	-8200 to -1	0	1 to 8200		
+Knob 1	Control change          0, controller 12, value	0	127	1 at a time w Acceleration	127	by 1				
+Knob 2	Control change          0, controller 13, value	0	127	1 at a time w Acceleration	127	by 1				
+Knob 3	Control change          0, controller 14, value	0	127	1 at a time w Acceleration	127	by 1				
+Knob 4	Control change          0, controller 15, value	0	127	1 at a time w Acceleration	127	by 1				
+Slider 1	Control change          0, controller 7,value 	0	127	5 steps 	5	0	1-35	36-70	71-105	105-127
+Mod Whl	Control change          0, controller 1, value	0	127	5 steps	5	0-10	11-39	40-80	81-119	120-127
+Sustain	Control change          0, controller 64, value	0	127	2 steps	2	0	127			
+										
+	These are not (fully) Implemented. This page adds nothing to the output tab so far.									
