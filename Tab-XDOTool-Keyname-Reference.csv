@@ -111,7 +111,7 @@ OO	xdotool Keyname	Description	Type	Subtype	X keycode	Unicode	Sort	Orig
 110	Delete	Delete, rubout	Control	TTY	0xffff		10	10
 111	osfDeselectAll	Deselect All (osf)	Control	Control	0x1004ff72		10	2380
 112	XF86Tools	Desktop Tools	Control	Control	0x1008ff81		10	2189
-113	XF86MyComputer	Display "My Computer" Window	Control	Control	0x1008ff33		10	2150
+113	XF86MyComputer	Display My Computer Window	Control	Control	0x1008ff33		10	2150
 114	XF86MenuKB	Distinguish Keyboard From Pb	Control	Control	0x1008ff65		10	2211
 115	XF86MenuPB	Distinguish Pb From Keyboard	Control	Control	0x1008ff66		10	2212
 116	3270_Duplicate	Duplicate (IBM)	Control	IBM3270	0xfd01		10	316
