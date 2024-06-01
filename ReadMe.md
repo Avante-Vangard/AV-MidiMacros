@@ -2,7 +2,7 @@
 
 Read through this entire document before attempting to use AV-MidiMacros. 
 
-Proceed at your own risk. Running any program carries risk. This file and the resulting script may or may  not act appropriately.  No warranties of any kind are provided. following these instructions may provide  usable code, but the resposibility for that code rests on the one following this guide.
+Proceed at your own risk. Running any program carries risk. This file and the resulting script may or may  not act appropriately.  No warranties of any kind are provided. following these instructions may provide  usable code, but the responsibility for that code rests on the one following this guide.
 
 ## Background (or why am I here?) 
 
@@ -11,7 +11,7 @@ Re: [Translating MIDI input into computer keystrokes](https://superuser.com/ques
 
 I have a MIDI controller (Launchkey Mini) that I don't really use for music production anymore, but I would like to use the drum pad buttons or piano keys on it to perform computer keyboard combinations, such as Ctrl + Alt + Delete, with a single press.
 
-Whenever I try to research this question, I either get pointed to Bome's MIDI Translator, which costs money and isn't on Linux, a horribly outdated plug-in/application, or some random library for coding it myself, which I have no clue how to do since I have virtually no skill in programming things related to audio.
+Whenever I try to research this question, I either get pointed to Bome's MIDI Translator, which costs money and isn't on Linux, or a horribly outdated plug-in/application, or some random library for coding it myself, which I have no clue how to do since I have virtually no skill in programming things related to audio.
 
 Is there some way I can do this? I am on Xubuntu 16.04.
 
