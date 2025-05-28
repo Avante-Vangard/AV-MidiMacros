@@ -165,3 +165,15 @@ esac
 More information: 
 [Regex ranges](https://javascript.info/regexp-character-sets-and-ranges) look like [ ]
 [Regex alternates](https://www.regular-expressions.info/alternation.html) look like |
+
+## Sending web form compatible tabs. 
+
+For many web forms, you can advance to the next field by typing the TAB key.  The 'xdotool type'
+command may be used to send tabs and returns with data.  I haven't found a public reason to use
+this feature, so there aren't any examples in the Actions tab
+
+|oo|MM Name | Abbr|Bash Command | Type|
+|==|========|=====|=============|=====|
+|356|WebFiller|   |xdotool type 'Field 1\u0009 Field 2'|  
+
+(This Action will send "field 1" to the first text box, and "Field 2" to the 2nd text box, as long as a single tab press will move the cursor across the boxes.)
