@@ -172,8 +172,8 @@ For many web forms, you can advance to the next field by typing the TAB key.  Th
 command may be used to send tabs and returns with data.  I haven't found a public reason to use
 this feature, so there aren't any examples in the Actions tab
 
-|oo|MM Name | Abbr|Bash Command | Type|
-|==|========|=====|=============|=====|
-|356|WebFiller|   |xdotool type 'Field 1\u0009 Field 2'|  
+| oo  | MM Name   | Abbr | Bash Command                                      | Type |
+| --- | --------- | ---- | ------------------------------------------------- | ---- |
+| 258 | zz-amazon |      | xdotool type -delay 400 $'Field 1\\u0009 Field 2' |      |
 
 (This Action will send "field 1" to the first text box, and "Field 2" to the 2nd text box, as long as a single tab press will move the cursor across the boxes.)
