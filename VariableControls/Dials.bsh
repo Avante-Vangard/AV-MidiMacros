@@ -1,0 +1,187 @@
+#!/bin/bash
+
+# Control Snapcast and MPD using MIDI controller "SubZero MiniControl"
+
+# Snapcast can be controlled using a JSON-RPC API over HTTP.
+# For example: set client's volume and mute clients.
+# curl is used to send requests and receive responses.
+# jq is used to filter JSON data and make it more readable
+
+# MPD can be controlled by MPC.
+
+# aseqdump (ALSA sequencer dump) is used to read the MIDI controller data.
+# Like: number of the controller (fader, knob, button) and controller value
+
+# SubZero MiniControl Layout
+# 
+#   Channels 1-4
+#   Buttons, faders, knobs and their controller numbers
+#   +------+------+------+------+
+#   | K 14 | K 15 | K 16 | K 17 |  ids index = controller no - 14
+#   +------+------+------+------+
+#   | F 3  | F 4  | F 5  | F 6  |  ids index = controller no - 3
+#   +------+------+------+------+
+#   | B 23 | B 24 | B 25 | B 26 |  ids index = controller no - 23
+#   +------+------+------+------+
+#   |    1 |    2 |    3 |    4 |
+#   +------+------+------+------+
+#    ids[0] ids[1] ids[2] ids[3]
+#
+#   K = knob / F = fader / B = button
+#   1-4: channel number printed on the SubZero MiniControl
+#   ids[]: Snapclient IDs assigned to channels
+#
+#   Media buttons and their controller numbers
+#   +-----------+-------------+---------+---------+---------+-----------+
+#   | Repeat 49 | Previous 47 | Next 48 | Stop 46 | Play 45 | Record 44 |
+#   +-----------+-------------+---------+---------+---------+-----------+
+
+# Name of the MIDI controller
+controller="minicontrol"
+# Name of the server where the Snapserver is running
+server="nas"
+
+# Put the Snapclient IDs in an array
+# So they can be easily assigned to controllers of adjacent channels
+# To find out the IDs of your Snapclients, run this script with the -c option
+ids[0]="34:17:eb:cc:89:f9" # Living room (channel 1)
+ids[1]="f0:79:59:5a:ae:05" # Hobby room (channel 2)
+ids[2]="18:31:bf:56:dc:d4" # Kitchen (channel 3)
+ids[3]="e0:d4:e8:77:dc:97" # Laptop (channel 4)
+
+# Show properties of all Snapclients (like the IDs)
+function show_config
+{
+  json2curl '{"id":1,"jsonrpc":"2.0","method":"Server.GetStatus"}' | jq .result.server.groups[].clients[]
+}
+
+# Set Snapclient volume
+# Arguments: $1: Snapclient ID, $2: fader value
+function set_volume()
+{
+  volume=$((100 * $2 / 127))
+  echo "Set volume $1"
+  json2curl '{"id":"1","jsonrpc":"2.0","method":"Client.SetVolume","params":{"id":"'$1'","volume":{"percent":'$volume'}}}'
+}
+
+# Toggle mute Snapclient
+# Arguments: $1: Snapclient ID, $2: button value
+function toggle_mute()
+{
+  # Only take action if button is pressed
+  if [ $2 -eq 127 ]
+  then
+    muted=$(json2curl '{"id":1,"jsonrpc":"2.0","method":"Client.GetStatus","params":{"id":"'$1'"}}' | jq .result.client.config.volume.muted)
+    if [ "$muted" = "true" ]
+    then
+      muted=false
+    else
+      muted=true
+    fi
+    echo "Toggle mute $1"
+    json2curl '{"id":"1","jsonrpc":"2.0","method":"Client.SetVolume","params":{"id":"'$1'","volume":{"muted":'$muted'}}}'
+  fi
+}
+
+# Set Snapclient latency
+# Arguments: $1: Snapclient ID, $2: knob value
+function set_latency()
+{
+  echo "Set latency $1"
+  json2curl '{"id":1,"jsonrpc":"2.0","method":"Client.SetLatency","params":{"id":"'$1'","latency":'$2'}}'
+}
+
+# Control MPC
+# Arguments: $1: mpd command, $2: button value
+function control_mpc()
+{
+  # Only take action if button is pressed
+  if [ $2 -eq 127 ]
+  then
+    echo "Control mpc: $1"
+    mpc -h $server $1
+  fi
+}
+
+# Send JSON request to Snapserver
+# Argument: $1: JSON request
+# curl option -s is used to suppress headers
+function json2curl()
+{
+  curl -s --data $1 $server:1780/jsonrpc
+}
+
+# Main code
+
+# Show config (-c option)
+# Use the -c option to find out the Snapclient IDs
+if [ "$1" = "-c" ]
+then
+  show_config
+  exit
+fi
+
+# Test MIDI controller (-t option)
+if [ "$1" = "-t" ]
+then
+  aseqdump -p "$controller"
+  exit
+fi
+
+# aseqdump (ALSA sequencer dump) shows MIDI data:
+
+# Waiting for data. Press Ctrl+C to end.
+# Source  Event            Ch  Data
+# 20:0    Control change   0,  controller 3,       value   39
+# 20:0    Control change   0,  controller 3,       value   40
+# 20:0    Control change   0,  controller 3,       value   41
+# 20:0    Control change   0,  controller 23,      value   127
+# 20:0    Control change   0,  controller 23,      value   0
+# ...
+# Read these lines into variables:
+# src     ev1     ev2      ch  label1     ctrl_no  label2  ctrl_value
+
+# ctrl_no is number of controller (fader, knob, button)
+# ctrl_value is value of controller
+#   fader/knob value: 0 - 127
+#   button value pressed: 127, value released: 0
+
+# There are two delimiters in the output of aseqdump: comma and space
+# So set IFS (internal field separator) to comma and space (" ," or ", ")
+# IFS must be specified before each read!
+
+aseqdump -p "$controller" |
+{
+  # Ignore first two ouput lines of aseqdump (info and header)
+  read
+  read
+  while IFS=" ," read src ev1 ev2 ch label1 ctrl_no label2 ctrl_value rest
+  do
+    case $ctrl_no in
+    # Control Snapclients
+     [3-6]) # Fader 1-4 (set volume)
+            id=${ids[$ctrl_no-3]}
+            set_volume $id $ctrl_value ;;
+    1[4-7]) # Knob 1-4 (set latency)
+            id=${ids[$ctrl_no-14]}
+            set_latency $id $ctrl_value ;;     
+    2[3-6]) # Button 1-4 (mute, unmute)
+            id=${ids[$ctrl_no-23]}
+            toggle_mute $id $ctrl_value ;;
+    # Control MPD with MPC
+        45) # Play button (play, pause)
+            control_mpc toggle $ctrl_value ;;
+        46) # Stop button (stop)
+            control_mpc stop $ctrl_value ;;
+        47) # Previous button (previous song)
+            control_mpc prev $ctrl_value ;;
+        48) # Next button (next song)
+            control_mpc next $ctrl_value ;;
+        49) # Repeat button (toggle random play)
+            control_mpc random $ctrl_value ;;
+        44) # Record button (add all songs to the queue)
+            control_mpc clear $ctrl_value
+            control_mpc "add /" $ctrl_value ;;
+    esac
+  done
+}
