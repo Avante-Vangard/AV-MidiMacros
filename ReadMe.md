@@ -2,19 +2,20 @@
 
 > Read through this entire document before attempting to use AV-MidiMacros.
 
-> Proceed at your own risk. Running any program carries risk. This file and the resulting script may or may  not act appropriately.  No warranties of any kind are provided. following these instructions may provide usable code, but the resposibility for that code rests on the one following this guide.
+> Proceed at your own risk! Running any program carries risk. This file and the resulting script may or may not act appropriately.  No warranties of any kind are provided. Following these instructions may provide usable code, but the responsibility for that code rests on the one following this guide. 
 
-## Background (or, Why am I here?)
+## Background.
+### _(or, Why am I here?)_
 
 ### Translating MIDI into computer keystrokes on Linux. 
 
 > Re: (https://superuser.com/questions/1170136/translating-midi-input-into-computer-keystrokes-on-linux)
-
-> I have a MIDI controller (Launchkey Mini) that I don't really use for music production anymore, but I would like to use the drum pad buttons or piano keys on it to perform computer keyboard combinations, such as Ctrl + Alt + Delete, with a single press.
-
-> Whenever I try to research this question, I either get pointed to Bome's MIDI Translator, which costs money and isn't on Linux, a horribly outdated plug-in/application, or some random library for coding it myself, which I have no clue how to do since I have virtually no skill in programming things related to audio.
-
-    Is there some way I can do this? I am on Xubuntu 16.04.
+>
+> _I have a MIDI controller (Launchkey Mini) that I don't really use for music production anymore, but I would like to use the drum pad buttons or piano keys on it to perform computer keyboard combinations, such as Ctrl + Alt + Delete, with a single press._
+>
+> _Whenever I try to research this question, I either get pointed to Bome's MIDI Translator, which costs money and isn't on Linux, a horribly outdated plug-in/application, or some random library for coding it myself, which I have no clue how to do since I have virtually no skill in programming things related to audio._
+>
+> _Is there some way I can do this? I am on Xubuntu 16.04._
 
 ____
 
@@ -32,7 +33,6 @@ ____
 
 > Then run it with the client name to check whether events arrive:
 
-    {
     $ aseqdump -p "Xonar D2"
     Waiting for data. Press Ctrl+C to end.
     Source  Event                  Ch  Data
@@ -45,14 +45,16 @@ ____
     24:0   Note off                0, note 52
     24:0   Note off                0, note 68
     ...
-    }
+    
 
 > Second, to simulate key strokes, you need xdotool. If you do not yet have it installed, run sudo apt-get install xdotool. You can use type to type text, or key to simulate special keys:
 
-    {
+    
     xdotool type Hello, World!
     xdotool key ctrl+p
-    }
+    xdotool mouse click
+    xdotool exec espeak 'hello!'
+    
 
 > Please note that not all special keys are handled correctly by xdotool. For example, Ctrl+Alt+Del is handled very specially by the kernel and probably does not work when simulated; try running sudo reset instead of xdotool.
 
@@ -69,11 +71,17 @@ ____
     esac
     done
 
-> Make it executable (chmod +x ~/bin/midi-to-keys), and run it (~/bin/midi-to-keys). Now, pressing E-5 or C-4 should have some effect.
+> Make it executable, 
 
-> Change or add lines of the form "Note on x" ) command ;; to do whatever you want.
+    $ sudo chmod +x ~/bin/MidiMacros.bsh
+    
+> and run it
 
-> answered Jan 22 '17 at 9:30 by CL
+    $ ./MidiMacros.bsh
+
+> Now, pressing E-5 or C-4 should have some effect.
+
+> Change or add lines of the form "Note on x" ) command ;; to do whatever you want. _(answered Jan 22 '17 at 9:30 by CL)_
 
 
 
@@ -120,7 +128,9 @@ ____
    
 ____
 
-## Appendices . Programming techniques
+# Appendices. 
+
+## Programming techniques
 
 ### Using numeric ranges in case statements.
 
